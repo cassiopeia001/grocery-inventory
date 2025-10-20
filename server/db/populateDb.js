@@ -91,8 +91,10 @@ const SQL = `
 async function main() {
   console.log("seeding...");
   const client = new Client({
-    connectionString: `postgresql://${process.env.USER}:${process.env.PASSWORD}@${process.env.HOST}:${process.env.PORT}/grocery_inventory`,
-  });
+    connectionString: process.env.DATABASE_URL ||
+    `postgresql://${process.env.USER}:${process.env.PASSWORD}@${process.env.HOST}:${process.env.PORT}/grocery_inventory`,
+    ssl: process.env.NODE_ENV === "production" ? { rejectUnauthorized: false } : false,
+    });
   await client.connect();
   await client.query(SQL);
   await client.end();
