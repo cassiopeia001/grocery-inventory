@@ -166,8 +166,8 @@ export default function Home (){
                         </tbody>
                 </table>
                             ) :(
-                            <p className="text-center text-gray-800 font-medium">No result found, please try again. </p>
-                            )
+                           <p className="text-center text-gray-800 font-medium"> {categorySearch==="" ?  "No categories yet, click add to add a category" : "No result found, please try again."} </p>
+                        )
                         }
                 </div>
             </div>
