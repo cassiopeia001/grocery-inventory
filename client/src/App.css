@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme{
+    --font-bai: "Bai Jamjuree", sans-serif;
+    --font-source-sans: "Source Sans 3", sans-serif;
+}
+thead th:first-child {
+  border-top-left-radius: 0.5rem; 
+  border-bottom-left-radius: 0.5rem;
+}
+
+thead th:last-child {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+/* tbody td {
+    border-bottom: 1px solid #F2F2F2;
+    
+}    */
