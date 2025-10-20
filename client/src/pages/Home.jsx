@@ -17,14 +17,14 @@ export default function Home (){
 
     const {categorySearch} = useOutletContext();
     useEffect(()=>{
-        fetch('http://localhost:3000/api/categories/').
+        fetch('https://grocery-inventory-38fo.onrender.com/api/categories/').
         then(response=> response.json()).
         then(data=> setCategories(data)).
         catch(err=>console.log(err))
     }, []);
     function handleEditCategory(id){
         if (editedName.trim()!= ""){
-            fetch(`http://localhost:3000/api/categories/${id}`,{
+            fetch(`https://grocery-inventory-38fo.onrender.com/api/categories/${id}`,{
                 method: "PUT",
                 headers : {
                 "Content-Type": "application/json", 
@@ -41,7 +41,7 @@ export default function Home (){
         setEditedName("");
     }
     function handleDeleteCategory(){
-        fetch(`http://localhost:3000/api/categories/${activeAction.id}`, {
+        fetch(`https://grocery-inventory-38fo.onrender.com/api/categories/${activeAction.id}`, {
             method: "DELETE", 
             headers : {
                 "Content-Type" : "application/json",

@@ -22,19 +22,19 @@ export default function Category(){
     const { itemSearch } = useOutletContext();
 
     useEffect(()=>{
-        fetch(`http://localhost:3000/api/categories/${category_id}`)
+        fetch(`https://grocery-inventory-38fo.onrender.com/api/categories/${category_id}`)
         .then(response=> response.json())
         .then(data=> setCategoryName(data))
         .catch(err=>console.log(err));
 
-        fetch(`http://localhost:3000/api/categories/${category_id}/items`)
+        fetch(`https://grocery-inventory-38fo.onrender.com/api/categories/${category_id}/items`)
         .then(response=>response.json())
         .then(data=> setItems(data))
         .catch(err=>console.log(err));
     },[]);
 
     function deleteItem(){
-        fetch(`http://localhost:3000/api/categories/${category_id}/items/${activeAction.id}`, {
+        fetch(`https://grocery-inventory-38fo.onrender.com/api/categories/${category_id}/items/${activeAction.id}`, {
             method :"DELETE",
             headers : { "Content-Type": "application/json", },
         })

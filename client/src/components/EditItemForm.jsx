@@ -11,7 +11,7 @@ export default function EditItemForm({setItems, editedItem, setActiveAction}){
     function handleEditItem(e){
         e.preventDefault();
         if (editedItem.name != name || editedItem.price != price || editedItem.quantity != quantity || editedItem.unit != unit){
-            fetch(`http://localhost:3000/api/categories/${editedItem.category_id}/items/${editedItem.id}`, {
+            fetch(`https://grocery-inventory-38fo.onrender.com/api/categories/${editedItem.category_id}/items/${editedItem.id}`, {
 
                 method :"PUT",
                 headers : { "Content-Type": "application/json", },

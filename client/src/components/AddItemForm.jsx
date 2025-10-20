@@ -12,7 +12,7 @@ export default function AddItemForm ({setItems, categoryId, setActiveAction}){
     function AddNewItem (e){
         e.preventDefault();
 
-        fetch(`http://localhost:3000/api/categories/${categoryId}/items`,{
+        fetch(`https://grocery-inventory-38fo.onrender.com/api/categories/${categoryId}/items`,{
             method: "POST",
             headers: {
             "Content-Type": "application/json", 

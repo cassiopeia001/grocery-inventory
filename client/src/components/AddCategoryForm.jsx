@@ -7,7 +7,7 @@ export default function AddCategoryForm({input, setInput, setActiveAction}){
 
     function AddNewCategory (e){
         e.preventDefault();
-        fetch('http://localhost:3000/api/categories/',{
+        fetch('https://grocery-inventory-38fo.onrender.com/api/categories/',{
             method: "POST",
             headers: {
             "Content-Type": "application/json", 
